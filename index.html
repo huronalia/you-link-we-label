@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouLinkWeAnnotate - Biological Imaging Data Annotation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="background-layer"></div>
+
+<!-- Header Navigation -->
+<header>
+    <nav>
+        <div class="logo-section">
+            <!--            <img src="../logo.svg" alt="Link We Label Logo" class="logo">-->
+            <svg width="100%" height="100%" viewBox="0 0 271 31" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                 style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:10;">
+    <g transform="matrix(1,0,0,1,-47.8291,-214.286)">
+        <g transform="matrix(17.49,0,-10.0979,17.49,48.394,230.228)">
+            <path d="M0.206,-0L0.392,-0L0.392,-0.283L0.604,-0.74L0.422,-0.74L0.305,-0.451L0.303,-0.451L0.186,-0.74L-0.004,-0.74L0.206,-0.283L0.206,-0Z"
+                  style="fill-rule:nonzero;"/>
+        </g>
+        <g transform="matrix(17.49,0,-10.0979,17.49,57.139,230.228)">
+            <path d="M0.266,0.011C0.389,0.011 0.514,-0.061 0.514,-0.267C0.514,-0.476 0.389,-0.546 0.266,-0.546C0.142,-0.546 0.018,-0.476 0.018,-0.267C0.018,-0.061 0.143,0.011 0.266,0.011ZM0.266,-0.125C0.214,-0.125 0.199,-0.173 0.199,-0.267C0.199,-0.367 0.217,-0.405 0.266,-0.405C0.318,-0.405 0.333,-0.36 0.333,-0.267C0.333,-0.165 0.316,-0.125 0.266,-0.125Z"
+                  style="fill-rule:nonzero;"/>
+        </g>
+        <g transform="matrix(17.49,0,-10.0979,17.49,66.4612,230.228)">
+            <path d="M0.168,0.011C0.246,0.011 0.3,-0.037 0.323,-0.072L0.323,-0L0.504,-0L0.504,-0.535L0.323,-0.535L0.323,-0.171C0.305,-0.155 0.28,-0.137 0.254,-0.137C0.229,-0.137 0.22,-0.153 0.22,-0.183L0.22,-0.535L0.039,-0.535L0.039,-0.127C0.039,-0.021 0.095,0.011 0.168,0.011Z"
+                  style="fill-rule:nonzero;"/>
+        </g>
+        <g transform="matrix(30,0,0,30,80.1559,240.218)" class="svg-primary-1">
+            <path d="M0.069,-0L0.58,-0L0.58,-0.161L0.269,-0.161L0.269,-0.74L0.069,-0.74L0.069,-0Z"
+                  style="fill-rule:nonzero;"/>
+        </g>
+        <g transform="matrix(30,0,0,30,98.0059,240.218)" class="svg-primary-1">
+            <path d="M0.059,-0.588L0.257,-0.588L0.257,-0.74L0.059,-0.74L0.059,-0.588ZM0.059,-0L0.257,-0L0.257,-0.536L0.059,-0.536L0.059,-0Z"
+                  style="fill-rule:nonzero;"/>
+        </g>
+        <g transform="matrix(30,0,0,30,107.486,240.218)" class="svg-primary-1">
+            <path d="M0.055,-0L0.253,-0L0.253,-0.346C0.279,-0.367 0.308,-0.384 0.342,-0.384C0.375,-0.384 0.387,-0.363 0.387,-0.326L0.387,-0L0.585,-0L0.585,-0.391C0.585,-0.506 0.515,-0.546 0.431,-0.546C0.332,-0.546 0.276,-0.49 0.253,-0.453L0.253,-0.536L0.055,-0.536L0.055,-0Z"
+                  style="fill-rule:nonzero;"/>
+        </g>
+        <g transform="matrix(30,0,0,30,126.476,240.218)" class="svg-primary-1">
+            <path d="M0.054,-0L0.252,-0L0.252,-0.135L0.297,-0.188L0.396,-0L0.599,-0L0.419,-0.332L0.593,-0.536L0.383,-0.536L0.252,-0.369L0.252,-0.74L0.054,-0.74L0.054,-0Z"
+                  style="fill-rule:nonzero;"/>
+        </g>
+        <g transform="matrix(17.49,0,-10.0979,17.49,144.716,230.228)">
+            <path d="M0.211,-0L0.381,-0L0.493,-0.463L0.495,-0.463L0.596,-0L0.763,-0L0.955,-0.74L0.772,-0.74L0.713,-0.445C0.701,-0.387 0.694,-0.367 0.685,-0.296L0.683,-0.296C0.672,-0.367 0.664,-0.391 0.65,-0.447L0.584,-0.74L0.403,-0.74L0.342,-0.448C0.331,-0.4 0.321,-0.362 0.312,-0.296L0.31,-0.296C0.3,-0.364 0.29,-0.401 0.278,-0.449L0.215,-0.74L0.014,-0.74L0.211,-0Z"
+                  style="fill-rule:nonzero;"/>
+        </g>
+        <g transform="matrix(17.49,0,-10.0979,17.49,159.564,230.228)">
+            <path d="M0.314,0.011C0.403,0.011 0.486,-0.009 0.554,-0.053L0.483,-0.173C0.448,-0.152 0.385,-0.124 0.329,-0.124C0.271,-0.124 0.232,-0.141 0.222,-0.211L0.565,-0.211L0.565,-0.241C0.565,-0.508 0.413,-0.546 0.307,-0.546C0.198,-0.546 0.025,-0.482 0.025,-0.267C0.025,-0.05 0.167,0.011 0.314,0.011ZM0.224,-0.324C0.236,-0.385 0.267,-0.408 0.306,-0.408C0.353,-0.408 0.382,-0.388 0.39,-0.324L0.224,-0.324Z"
+                  style="fill-rule:nonzero;"/>
+        </g>
+        <g transform="matrix(30,0,0,30,169.865,240.218)" class="svg-primary-2">
+            <path d="M0.01,-0L0.192,-0L0.24,-0.138L0.473,-0.138L0.518,-0L0.72,-0L0.458,-0.743L0.272,-0.743L0.01,-0ZM0.287,-0.28L0.358,-0.485L0.36,-0.485L0.428,-0.28L0.287,-0.28Z"
+                  style="fill-rule:nonzero;"/>
+        </g>
+        <g transform="matrix(30,0,0,30,191.765,240.218)" class="svg-primary-2">
+            <path d="M0.055,-0L0.253,-0L0.253,-0.346C0.279,-0.367 0.308,-0.384 0.342,-0.384C0.375,-0.384 0.387,-0.363 0.387,-0.326L0.387,-0L0.585,-0L0.585,-0.391C0.585,-0.506 0.515,-0.546 0.431,-0.546C0.332,-0.546 0.276,-0.49 0.253,-0.453L0.253,-0.536L0.055,-0.536L0.055,-0Z"
+                  style="fill-rule:nonzero;"/>
+        </g>
+        <g transform="matrix(30,0,0,30,210.755,240.218)" class="svg-primary-2">
+            <path d="M0.055,-0L0.253,-0L0.253,-0.346C0.279,-0.367 0.308,-0.384 0.342,-0.384C0.375,-0.384 0.387,-0.363 0.387,-0.326L0.387,-0L0.585,-0L0.585,-0.391C0.585,-0.506 0.515,-0.546 0.431,-0.546C0.332,-0.546 0.276,-0.49 0.253,-0.453L0.253,-0.536L0.055,-0.536L0.055,-0Z"
+                  style="fill-rule:nonzero;"/>
+        </g>
+        <g transform="matrix(30,0,0,30,229.745,240.218)" class="svg-primary-2">
+            <path d="M0.311,0.011C0.44,0.011 0.597,-0.047 0.597,-0.267C0.597,-0.49 0.44,-0.546 0.311,-0.546C0.181,-0.546 0.025,-0.49 0.025,-0.267C0.025,-0.047 0.182,0.011 0.311,0.011ZM0.311,-0.126C0.242,-0.126 0.223,-0.188 0.223,-0.266C0.223,-0.35 0.246,-0.404 0.311,-0.404C0.379,-0.404 0.399,-0.344 0.399,-0.266C0.399,-0.181 0.376,-0.126 0.311,-0.126Z"
+                  style="fill-rule:nonzero;"/>
+        </g>
+        <g transform="matrix(30,0,0,30,248.405,240.218)" class="svg-primary-2">
+            <path d="M0.298,0.007C0.337,0.007 0.409,0.001 0.419,-0.002L0.419,-0.14C0.41,-0.137 0.384,-0.134 0.367,-0.134C0.311,-0.134 0.297,-0.148 0.297,-0.205L0.297,-0.394L0.434,-0.394L0.434,-0.536L0.297,-0.536L0.297,-0.716L0.099,-0.716L0.099,-0.536L0.012,-0.536L0.012,-0.394L0.099,-0.394L0.099,-0.161C0.099,-0.057 0.116,0.007 0.298,0.007Z"
+                  style="fill-rule:nonzero;"/>
+        </g>
+        <g transform="matrix(30,0,0,30,261.965,240.218)" class="svg-primary-2">
+            <path d="M0.17,0.008C0.249,0.008 0.304,-0.023 0.348,-0.078C0.348,-0.048 0.353,-0.022 0.36,-0L0.556,-0C0.545,-0.027 0.541,-0.066 0.541,-0.13L0.541,-0.321C0.541,-0.472 0.478,-0.546 0.32,-0.546C0.176,-0.546 0.092,-0.497 0.043,-0.453L0.124,-0.341C0.169,-0.373 0.227,-0.399 0.289,-0.399C0.335,-0.399 0.348,-0.38 0.348,-0.354L0.348,-0.347C0.128,-0.337 0.017,-0.264 0.017,-0.144C0.017,-0.039 0.093,0.008 0.17,0.008ZM0.254,-0.139C0.229,-0.139 0.21,-0.151 0.21,-0.177C0.21,-0.218 0.252,-0.243 0.348,-0.246L0.348,-0.17C0.331,-0.154 0.303,-0.139 0.254,-0.139Z"
+                  style="fill-rule:nonzero;"/>
+        </g>
+        <g transform="matrix(30,0,0,30,279.635,240.218)" class="svg-primary-2">
+            <path d="M0.298,0.007C0.337,0.007 0.409,0.001 0.419,-0.002L0.419,-0.14C0.41,-0.137 0.384,-0.134 0.367,-0.134C0.311,-0.134 0.297,-0.148 0.297,-0.205L0.297,-0.394L0.434,-0.394L0.434,-0.536L0.297,-0.536L0.297,-0.716L0.099,-0.716L0.099,-0.536L0.012,-0.536L0.012,-0.394L0.099,-0.394L0.099,-0.161C0.099,-0.057 0.116,0.007 0.298,0.007Z"
+                  style="fill-rule:nonzero;"/>
+        </g>
+        <g transform="matrix(30,0,0,30,293.195,240.218)" class="svg-primary-2">
+            <path d="M0.314,0.011C0.403,0.011 0.486,-0.009 0.554,-0.053L0.483,-0.173C0.448,-0.152 0.385,-0.124 0.329,-0.124C0.271,-0.124 0.232,-0.141 0.222,-0.211L0.565,-0.211L0.565,-0.241C0.565,-0.508 0.413,-0.546 0.307,-0.546C0.198,-0.546 0.025,-0.482 0.025,-0.267C0.025,-0.05 0.167,0.011 0.314,0.011ZM0.224,-0.324C0.236,-0.385 0.267,-0.408 0.306,-0.408C0.353,-0.408 0.382,-0.388 0.39,-0.324L0.224,-0.324Z"
+                  style="fill-rule:nonzero;"/>
+        </g>
+    </g>
+                <g transform="matrix(1.09603,-0.0134726,0.0147678,0.999909,-54.6037,-339.977)">
+        <g transform="matrix(0.912216,0.0122911,-0.0134726,0.999909,45.23,340.617)" class="svg-black">
+            <path d="M26.474,18.188L30.224,21.938L26.474,25.688" style="fill:none;stroke-width:2.5px;"/>
+            <path d="M3.792,21.938L30.224,21.938"
+                  style="fill:none;stroke-width:2.5px;stroke-linejoin:round;stroke-miterlimit:1.5;"/>
+        </g>
+    </g>
+                <g transform="matrix(0.884535,-0.0134726,0.0119181,0.999909,52.7937,-339.977)">
+        <g transform="matrix(1.13033,0.0152299,-0.0134726,0.999909,-64.2549,339.142)" class="svg-black">
+            <path d="M117.161,18.188L120.911,21.938L117.161,25.688" style="fill:none;stroke-width:2.5px;"/>
+            <path d="M99.921,21.938L120.911,21.938"
+                  style="fill:none;stroke-width:2.5px;stroke-linejoin:round;stroke-miterlimit:1.5;"/>
+        </g>
+    </g>
+</svg>
+            <div class="location-text">
+                <span>Proudly annotating in:</span>
+                <div class="location-container">
+                    <div class="location-slider" id="location-slider">
+                        <div class="location-item">Cambridge, MA</div>
+                        <div class="location-item">Ann Arbor, MI</div>
+                        <div class="location-item">Cambridge, MA</div>
+                        <div class="location-item">Ann Arbor, MI</div>
+                        <div class="location-item">Cambridge, MA</div>
+                        <div class="location-item">Ann Arbor, MI</div>
+                        <div class="location-item">Cambridge, MA</div>
+                        <div class="location-item">Ann Arbor, MI</div>
+                        <div class="location-item">Cambridge, MA</div>
+                        <div class="location-item">Ann Arbor, MI</div>
+                        <div class="location-item">Cambridge, MA</div>
+                        <div class="location-item">Ann Arbor, MI</div>
+                        <div class="location-item">Cambridge, MA</div>
+                        <div class="location-item">Ann Arbor, MI</div>
+                        <div class="location-item">Cambridge, MA</div>
+                        <div class="location-item">Ann Arbor, MI</div>
+                        <div class="location-item">Cambridge, MA</div>
+                        <div class="location-item">Ann Arbor, MI</div>
+                        <div class="location-item">Cambridge, MA</div>
+                        <div class="location-item">Ann Arbor, MI</div>
+                        <div class="location-item">Cambridge, MA</div>
+                        <div class="location-item">Ann Arbor, MI</div>
+                        <div class="location-item">Cambridge, MA</div>
+                        <div class="location-item">Ann Arbor, MI</div>
+                        <div class="location-item">Cambridge, MA</div>
+                        <div class="location-item">Ann Arbor, MI</div>
+                        <div class="location-item">Cambridge, MA</div>
+                        <div class="location-item">Ann Arbor, MI</div>
+                        <!--                            <div class="location-item">USA</div>-->
+                    </div>
+                </div>
+                <span>🇺🇸</span>
+            </div>
+        </div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#how-it-works">How It Works</a>
+            <a href="#who-we-are">Who We Are</a>
+            <a href="#process">Our Process</a>
+            <a href="#get-started">Get Started</a>
+        </div>
+    </nav>
+</header>
+
+<div class="main-container">
+    <!-- Content Section (60%) -->
+    <div class="content-section">
+        <p class="tagline">
+            We hate data annotation. You probably do too. But training AI models requires it,
+            and biology rarely has off-the-shelf datasets. It's grunt work and you could do it yourself or delegate
+            to someone else. Either way, it sucks, it's necessary,
+            and <b>we'll do it for you.</b>
+        </p>
+
+        <h2 id="how-it-works">How This Works</h2>
+        <ol>
+            <li><strong style="color: var(--color-primary-1)">You send us a link</strong> - Provide us a sharable link
+                to your biological imaging data and describe what you want annotated. The dataset does NOT have to be
+                structured
+            </li>
+            <li><strong>We annotate a sample</strong> - We download the data, figure out its structure, do some
+                research, annotate a small portion, and send you samples for review
+            </li>
+            <li><strong>We get your approval</strong> - You approve our annotations or provide feedback. We're not
+                experts in your domain, but we want to get this right. Once approved, we'll provide total cost estimates
+            </li>
+            <li><strong>We complete annotation</strong> - We annotate the entire dataset and notify you when complete.
+                You sit back and relax
+            </li>
+            <li><strong>You pay us</strong> - Pay the agreed upon fair price for the full annotations. We will send you
+                a digital invoice with a link to pay
+            </li>
+            <li><strong>We deliver your data</strong> - We upload the annotations back to the same shared folder. If you
+                provided a reference annotation, everything will be in that format
+            </li>
+        </ol>
+
+        <h3 class="central-claim">None of this is automated! A real person will send you an email!</h3>
+
+        <div class="annotation-types">
+            <h3>Annotation We Can Do</h3>
+            <div class="annotation-cards">
+                <div class="annotation-card">
+                    <img src="assets/bounding_box_examples.jpg" alt="Bounding Box Annotation Example"
+                         class="annotation-card-image">
+                    <div class="annotation-card-content">
+                        <h3>Object Detection</h3>
+                        <p>Bounding box annotations for identifying and localizing objects in your images. Perfect for
+                            training detection models and object recognition systems.</p>
+                    </div>
+                </div>
+                <div class="annotation-card">
+                    <img src="assets/segmentation_example.jpg" alt="Segmentation Annotation Example"
+                         class="annotation-card-image">
+                    <div class="annotation-card-content">
+                        <h3>Segmentation</h3>
+                        <p>Pixel-level annotations for precise object boundaries. Ideal for instance segmentation,
+                            semantic segmentation, and detailed analysis of biological structures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="who-we-are">Who Is Annotating Your Data?</h2>
+        <ul>
+            <!--            <li><strong>Expertise</strong> - We're biologists, neuroscientists, and AI experts with experience building and training AI models</li>-->
+            <!--            <li><strong>Continuous learning</strong> - While we're not experts in every niche, we research thoroughly to understand your specific field for each project. You can help us by thoroughly reviewing our initial samples</li>-->
+            <!--            <li><strong>Quality assurance</strong> - Every annotation is reviewed and double-checked by a human</li>-->
+            <li><strong>Annotator 1 (Chris)</strong> - PhD in Auditory Neuroscience and AI from Harvard University</li>
+            <li><strong>Annotator 2 (Anna)</strong> - BA in Neuroscience from University of Michigan and MA in Public
+                Health from Michigan State University
+            </li>
+            <li><strong>Not You</strong> - Nice!</li>
+        </ul>
+
+        <div class="annotation-types">
+            <h3>Microscopy We Work With</h3>
+            <div class="annotation-cards">
+                <div class="annotation-card">
+                    <img src="assets/confocal_microscopy_example.jpg" alt="Confocal Microscopy Example"
+                         class="annotation-card-image">
+                    <div class="annotation-card-content">
+                        <h3>Confocal Microscopy</h3>
+                        <p>We accept any format of images (tif, png, jpeg, czi, lif, etc...) and of any dimension.</p>
+                    </div>
+                </div>
+                <div class="annotation-card">
+                    <img src="assets/electron_microsopy_example.gif" alt="Electron Microscopy Example"
+                         class="annotation-card-image">
+                    <div class="annotation-card-content">
+                        <h3>Electron Microscopy</h3>
+                        <p>Scanning electron microscopy, FIB-SEM, TEM, or others.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="process">Our Annotation Process</h2>
+        <ol>
+            <li><strong>Download</strong> - We download your data from the link your provided</li>
+            <li><strong>Organize</strong> - Your data doesn't need to have much structure; we'll sort through
+                it and figure out your system. We'll confirm with you that we have a good grasp on its structure
+            </li>
+            <li><strong>Blinding</strong> - We blind ourselves to the data to ensure unbiased annotation</li>
+            <li><strong>Annotate</strong> - Each image is randomly selected and annotated until the entire
+                dataset is complete
+            </li>
+            <li><strong>Reformat</strong> - If you provide a sample annotation, we will ensure the output annotations are in a
+                format you can use
+            </li>
+            <li><strong>Delivery</strong> - Data is un-blinded and returned to you in a way that makes sense, either
+                email, or if possible, uploading it back to the link
+            </li>
+            <li><strong>Cold Hard Facts</strong> - You're sending your data to two people who will do all the work and just send it back.  This isn't a fancy scheme or a high-tech operation.
+            </li>
+        </ol>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <ul class="faq-list">
+                <li class="faq-item">
+                    <label class="faq-question">
+                        <span>Is there any commitment to submitting our data?</span>
+                    </label>
+                    <div class="faq-answer">
+                        <p>No.</p>
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <label class="faq-question">
+                        <span>How much does annotation cost?</span>
+                    </label>
+                    <div class="faq-answer">
+                        <p>
+                            We expect that, for pilot sized projects, this might cost a few hundred dollars.
+                            We use time as our metric for pricing, the more data you have and more complicated
+                            the annotations, the more it will cost. We can get a rough estimate for how long things will
+                            cost upon our first review, and you don't pay anything until all the data is labeled and done.
+<!--                            -->
+<!--                            Pricing varies based on annotation complexity, dataset size, and turnaround time.-->
+<!--                            After reviewing your sample data and requirements, we'll provide a transparent cost-->
+<!--                            estimate before starting the full project. We use annotation time, not number of images,-->
+<!--                            nor number of objects, as our metric for pricing. That being said, for pilot sized projects,-->
+<!--                            we expect pricing to range in the hundreds of dollars.-->
+
+                        </p>
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <label class="faq-question">
+                        <span>What do you do with my data?</span>
+                    </label>
+                    <div class="faq-answer">
+                        <p>
+                            We annotate it... That's it. We understand that a great deal of work is sensitive, and you may not feel
+                            comfortable sharing the nitty-gritty details. That is OK! We only see what
+                            you feel comfortable sharing, so if you pre-blind your data, we won't know anything.
+                        </p>
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <label class="faq-question">
+                        <span>Could I get a junior researcher to do this?</span>
+                    </label>
+                    <div class="faq-answer">
+                        <p>
+                            You could, however we firmly believe that data labeling is a task beneath your trainees, and
+                            adds very little to a compelling research experience.
+                            But it's not beneath us!
+                        </p>
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <label class="faq-question">
+                        <span>Wait, I research [SOMETHING COOL], don't you have to be an expert in [SOMETHING COOL] to make useful annotations?</span>
+                    </label>
+                    <div class="faq-answer">
+                        <p>
+                            Good point! Usually, no. Our annotators are smart people, and we will do our best to do the necessary background research to understand your data.
+                        However, images which a true expert to annotate (radiology, neurology, CT, etc...) may be out of our scope.
+                        </p>
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <label class="faq-question">
+                        <span>What file formats do you support?</span>
+                    </label>
+                    <div class="faq-answer">
+                        <p>We accept all common imaging formats including TIFF, PNG, JPEG, CZI, LIF, ND2, and more. We
+                            can work with any dimension - 2D, 3D, time-series, or multi-channel data. If it can be
+                            opened in ImageJ then we can work with it.</p>
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <label class="faq-question">
+                        <span>How much data can you annotate for me?</span>
+                    </label>
+                    <div class="faq-answer">
+                        <p>In theory, as much as you want, however right now we excel in smaller, niche datasets. The
+                            amount of imaging data that might reasonably lead to a single academic publication.</p>
+                    </div>
+                </li>
+
+                <li class="faq-item">
+                    <label class="faq-question">
+                        <span>How long does the annotation process take?</span>
+                    </label>
+                    <div class="faq-answer">
+                        <p>Timeline depends on dataset size and complexity. I will move hell and high water to get your
+                            data back to you as fast as possible.</p>
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <label class="faq-question">
+                        <span>Why dont you provide data upload?</span>
+                    </label>
+                    <div class="faq-answer">
+                        <p>Biological images can be large, and I don't want you to have to babysit a slow upload. Many
+                            people
+                            have access to a sharable link. If you do not, but would like to use
+                            our service, please reach out to chris@huronalia.com.</p>
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <label class="faq-question">
+                        <span>Can you do HIPPA Compliant Data?</span>
+                    </label>
+                    <div class="faq-answer">
+                        <p>No.</p>
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <label class="faq-question">
+                        <span>Do you use AI to generate labels?</span>
+                    </label>
+                    <div class="faq-answer">
+                        <p>No.</p>
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <label class="faq-question">
+                        <span>Will you ever use AI to generate labels?</span>
+                    </label>
+                    <div class="faq-answer">
+                        <p>Perhaps eventually. Ever label will still be manually assessed by a human though.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Form Section (30%, sticky) -->
+    <div class="form-section">
+        <div class="form-container" id="get-started">
+            <h2>Submit to get us started</h2>
+            <p class="subtitle">It's non-binding and will be the only work you'll do</p>
+
+            <form id="annotationForm">
+                <div class="form-group">
+                    <label>Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required, placeholder="wewont@spamyou.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Institution/University <span class="required">*</span></label>
+                    <input type="text" id="institution" name="institution" placeholder="e.g., Stanford University"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label>Sharable Link to Dataset <span class="required">*</span></label>
+                    <input type="url" id="dataLink" name="dataLink" placeholder="https://... (Please make it sharable)"
+                           required>
+                    <div class="file-info">Google Drive, Dropbox, GitHub, etc.</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Description of Annotation <span class="required">*</span></label>
+                    <textarea id="description" name="description" required
+                              placeholder="Type of annotations needed, format requirements, guidelines..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Example Annotation (Optional)</label>
+                    <div class="file-upload">
+                        <input type="file" id="exampleFile" name="exampleFile" accept=".json,.xml,.txt,.csv,.pdf,.zip">
+                        <label for="exampleFile" class="file-upload-label">
+                            <span id="fileLabel">Click to upload</span>
+                        </label>
+                    </div>
+                    <div class="file-info">JSON, XML, TXT, CSV, PDF, ZIP (Max 10MB)</div>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn">Submit Form</button>
+
+                <div id="status" class="status"></div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo-section">
+            <img src="../huronalia_logo.svg" alt="Huronalia Research and Engineering" class="footer-logo" style="width: 40px">
+            <div class="footer-company-name">Huronalia Research and Engineering</div>
+            <p class="footer-description">
+                A service by Huronalia Research and Engineering LLC. We specialize in biological data annotation and
+                applied AI/ML.
+            </p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#who-we-are">Who We Are</a></li>
+                <li><a href="#process">Our Process</a></li>
+                <li><a href="#get-started">Get Started</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <ul>
+                <li><a href="mailto:chris@huronalia.com">chris@huronalia.com</a></li>
+                <li>Cambridge, MA</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        &copy; 2025 Huronalia Research and Engineering LLC. All rights reserved.
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
