@@ -43,15 +43,18 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-padding-top: 100px;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Benton Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     background: var(--color-white);
     color: var(--color-text-primary);
     line-height: 1.6;
-}
-
-html {
-    scroll-padding-top: 100px;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 /* Header Navigation */
@@ -201,6 +204,16 @@ nav {
     .mobile-cta-button {
         display: block !important;
     }
+
+    /* Fix logo section on mobile */
+    .logo-section {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    nav {
+        padding: 10px 15px;
+    }
 }
 
 /* Footer */
@@ -317,6 +330,12 @@ footer {
     grid-template-columns: 300px;
     gap: 10px;
     margin-bottom: 00px;
+    max-width: 100%;
+}
+
+.logo-section svg {
+    max-width: 100%;
+    height: auto;
 }
 
 .logo {
