@@ -141,6 +141,40 @@ nav {
 }
 
 /* Mobile styles - show hamburger and modify nav-links */
+/* Short viewport - move form to bottom and show CTA button */
+@media (max-height: 800px) {
+    .main-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .content-section {
+        flex: 1 1 100%;
+        padding-right: 0;
+    }
+
+    .form-section {
+        flex: 1 1 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        position: static !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow-y: visible !important;
+    }
+
+    .form-container {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    /* Show mobile CTA button */
+    .mobile-cta-button {
+        display: block !important;
+    }
+}
+
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -315,11 +349,13 @@ footer {
     gap: 40px;
     padding: 40px 20px;
     position: relative;
+    box-sizing: border-box;
 }
 
 /* Content section - 60% */
 .content-section {
-    flex: 0 0 60%;
+    flex: 1 1 60%;
+    min-width: 0;
     padding-right: 20px;
 }
 
@@ -449,9 +485,8 @@ footer {
 
 /* Form section - 30% sticky */
 .form-section {
-    flex: 1 1 30%;
-    min-width: 40%;
-    max-width: 40%;
+    flex: 0 1 40%;
+    min-width: 0;
     position: -webkit-sticky; /* Safari support */
     position: sticky;
     top: 100px;
