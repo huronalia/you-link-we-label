@@ -45,7 +45,6 @@
 
 html {
     scroll-padding-top: 100px;
-    overflow-x: hidden;
 }
 
 body {
@@ -53,8 +52,8 @@ body {
     background: var(--color-white);
     color: var(--color-text-primary);
     line-height: 1.6;
-    overflow-x: hidden;
     width: 100%;
+    overflow-x: clip;
 }
 
 /* Header Navigation */
@@ -384,7 +383,18 @@ footer {
 .content-section .tagline {
     font-size: 18px;
     color: var(--color-black);
+    margin-bottom: 30px;
+}
+
+.tagline-image {
+    text-align: center;
     margin-bottom: 50px;
+}
+
+.tagline-image img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
 }
 
 .content-section h2 {
@@ -413,7 +423,8 @@ footer {
 
 .content-section strong {
     color: var(--color-primary-2);
-    font-weight: 700;
+    font-weight: 900;
+    font-size: 1.1em;
 }
 
 .content-section ul {
@@ -441,19 +452,18 @@ footer {
     flex: 1 1 30%;
     min-width: 40%;
     max-width: 40%;
+    position: -webkit-sticky; /* Safari support */
     position: sticky;
     top: 100px;
     align-self: flex-start;
     height: fit-content;
-    max-height: calc(100vh - 120px);
-    overflow-y: auto;
 }
 
 .form-container {
     background: var(--color-white);
     border-radius: 10px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-    padding: 30px;
+    padding: 20px;
     border: 1px solid var(--color-border-light);
     width: 100%;
     box-sizing: border-box;
@@ -462,24 +472,24 @@ footer {
 
 .form-container h2 {
     color: var(--color-text-primary);
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     font-size: 24px;
     font-weight: 900;
 }
 
 .form-container .subtitle {
     color: var(--color-text-secondary);
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     font-size: 14px;
 }
 
 .form-group {
-    margin-bottom: 18px;
+    margin-bottom: 12px;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     color: var(--color-text-tertiary);
     font-weight: 500;
     font-size: 13px;
@@ -495,7 +505,7 @@ input[type="tel"],
 input[type="url"],
 textarea {
     width: 100%;
-    padding: 10px 12px;
+    padding: 8px 10px;
     border: 1px solid var(--color-border-medium);
     border-radius: 5px;
     font-size: 14px;
@@ -511,7 +521,7 @@ textarea:focus {
 
 textarea {
     resize: vertical;
-    min-height: 80px;
+    min-height: 60px;
 }
 
 .file-upload {
@@ -530,7 +540,7 @@ textarea {
 
 .file-upload-label {
     display: block;
-    padding: 10px 12px;
+    padding: 8px 10px;
     border: 2px dashed var(--color-border-medium);
     border-radius: 5px;
     text-align: center;
@@ -546,7 +556,7 @@ textarea {
 }
 
 .file-info {
-    margin-top: 5px;
+    margin-top: 3px;
     font-size: 11px;
     color: var(--color-text-secondary);
 }
@@ -554,7 +564,7 @@ textarea {
 .btn-submit {
     background: linear-gradient(135deg, var(--color-primary-1) 0%, var(--color-primary-2) 100%);
     color: var(--color-white);
-    padding: 12px 30px;
+    padding: 10px 25px;
     border: none;
     border-radius: 5px;
     font-size: 15px;
@@ -576,8 +586,8 @@ textarea {
 }
 
 .status {
-    margin-top: 15px;
-    padding: 10px;
+    margin-top: 10px;
+    padding: 8px;
     border-radius: 5px;
     text-align: center;
     display: none;
