@@ -31,6 +31,29 @@ function init() {
     setupLocationRotation();
     setupFileUpload();
     setupFormSubmission();
+    setupHeaderColorChange();
+}
+
+// Header color change on scroll
+function setupHeaderColorChange() {
+    const header = document.querySelector('header');
+    const heroSection = document.getElementById('hero');
+
+    if (!header || !heroSection) return;
+
+    // Set initial state
+    header.classList.add('hero-header');
+
+    window.addEventListener('scroll', () => {
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+        const scrollPosition = window.scrollY + header.offsetHeight;
+
+        if (scrollPosition < heroBottom) {
+            header.classList.add('hero-header');
+        } else {
+            header.classList.remove('hero-header');
+        }
+    });
 }
 
 function cacheElements() {

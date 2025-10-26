@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Bungee&family=Knewave&family=Slackey&display=swap');
 :root {
     /* Primary brand colors - equal impact weight */
     --color-primary-1: #4a9381;
@@ -64,6 +65,52 @@ header {
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Header on hero section - dark mode */
+header.hero-header {
+    background: #000;
+    border-bottom: none;
+    box-shadow: none;
+}
+
+header.hero-header .nav-links a {
+    color: var(--color-white);
+}
+
+header.hero-header .hamburger span {
+    background-color: var(--color-white);
+}
+
+header.hero-header .svg-primary-1 path,
+header.hero-header .svg-primary-1 rect {
+    fill: var(--color-white);
+}
+
+header.hero-header .svg-primary-2 path,
+header.hero-header .svg-primary-2 rect {
+    fill: var(--color-white);
+}
+
+header.hero-header .svg-black path {
+    stroke: var(--color-white);
+}
+
+/* Target all paths and rects in the logo SVG for hero header */
+header.hero-header .logo-section svg path,
+header.hero-header .logo-section svg rect {
+    fill: var(--color-white);
+}
+
+/* Keep stroke paths as stroke */
+header.hero-header .logo-section svg path[style*="fill:none"] {
+    fill: none;
+    stroke: var(--color-white);
+}
+
+header.hero-header .location-text {
+    color: var(--color-white);
 }
 
 nav {
@@ -338,6 +385,76 @@ footer {
     /* background-image: url('path/to/image.jpg'); */
     /* background-size: cover; */
     /* background-position: center; */
+}
+
+/* Hero/Splash Section */
+.hero-section {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, rgba(0,0,0,1.0) 0%, rgba(0,0,0,0.9), 10%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.4) 100%),
+                url('assets/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--color-white);
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+.hero-title {
+    font-size: 64px;
+    margin-bottom: 30px;
+    line-height: 1.2;
+    color: var(--color-white);
+    /*font-family: 'Bitcount Grid Single', monospace;*/
+    font-family: 'Bungee';
+    font-weight: 400;
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    margin-bottom: 50px;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.hero-cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-primary-1) 0%, var(--color-primary-2) 100%);
+    color: var(--color-white);
+    padding: 18px 50px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.hero-cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+}
+
+/* Responsive hero section */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
 }
 
 /* Main layout container */
@@ -784,11 +901,13 @@ textarea {
 }
 
 /* SVG color classes */
-.svg-primary-1 path {
+.svg-primary-1 path,
+.svg-primary-1 rect {
     fill: var(--color-primary-1);
 }
 
-.svg-primary-2 path {
+.svg-primary-2 path,
+.svg-primary-2 rect {
     fill: var(--color-primary-2);
 }
 
